@@ -1,0 +1,128 @@
+:root {
+  --red: #df2935;
+  --border-radius-sm: 0.5rem;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f4f4f4;
+  padding: 0.5rem 1rem;
+  margin: 1.5rem auto;
+  width: 90%;
+  height: 19.25rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
+}
+
+.card__bookmark {
+  position: absolute;
+  top: -10px;
+  right: 10px;
+  fill: #828a95;
+  height: 50px;
+  width: 50px;
+}
+
+.card__bookmark--marked {
+  fill: var(--red);
+}
+
+.card__bookmark:hover,
+.card__bookmark:active,
+.card__bookmark:focus {
+  cursor: pointer;
+  fill: var(--red);
+  animation: shake 0.2s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  perspective: 1000px;
+}
+
+.card__question {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.card__btn {
+  text-align: center;
+  background-color: #069e2d;
+  color: #fff;
+  border-radius: var(--border-radius-sm);
+  padding: 1rem 0.5rem;
+  width: 50%;
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out;
+}
+
+.card__btn:hover,
+.card__btn:active,
+.card__btn:focus {
+  background-color: #1c572a;
+  transform: scale(0.95);
+}
+
+.card__answer {
+  color: #1c572a;
+  margin: 0.25rem 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.1s linear, opacity 0.3s ease-in;
+}
+
+.card__answer--shown {
+  visibility: visible;
+  opacity: 1;
+}
+
+.card__category {
+  padding: 0;
+  margin: 1rem 0 0 0;
+  display: flex;
+  align-self: flex-start;
+  gap: 0.5rem;
+  list-style: none;
+}
+
+.card__item {
+  background-color: #e3e3e3;
+  border: 1px solid #c9c9c9;
+  border-radius: var(--border-radius-sm);
+  padding: 0.25rem 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .card__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .card__container {
+    width: 1024px;
+    margin: auto;
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(0eg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
