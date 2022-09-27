@@ -9,7 +9,7 @@ export const DUMMY_DATA = [
     id: Math.floor(Math.random() * Math.floor(Math.random() * Date.now())),
     question: "When did World War II end?",
     answer: "1945",
-    categories: ["WWWII", "History"],
+    categories: ["WWII", "History"],
   },
   {
     id: Math.floor(Math.random() * Math.floor(Math.random() * Date.now())),
