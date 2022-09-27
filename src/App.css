@@ -4,7 +4,7 @@
 @import "./components/card/Card.css";
 /* @import "components/form/form.css"; */
 @import "./components/header/Header.css";
-@import "./components/footer/Footer.css";
+@import "./components/navigation/Navigation.css";
 
 .App {
   text-align: center;

@@ -1,7 +1,7 @@
 import "./App.css";
 import Card from "./components/card/Card";
 import Header from "./components/header/Header";
-import Footer from "./components/footer/Footer";
+import Footer from "./components/navigation/Navigation";
 
 function App() {
   return (
