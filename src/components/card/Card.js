@@ -17,7 +17,7 @@ export default function Card() {
       <p className="card__question">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, maiores?
       </p>
-      <a className="card__btn" href="">
+      <a className="card__btn" href="./">
         Show Answer
       </a>
       <p className="card__answer">The Answer</p>
