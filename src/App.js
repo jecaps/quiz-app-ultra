@@ -7,7 +7,7 @@ export default function App() {
   return (
     <div className="App">
       <Header />
-      <main className="app__main">
+      <main className="card__container">
         <Card
           question={"What is the capital of Germany?"}
           answer={"Berlin"}
