@@ -3,4 +3,5 @@
   border: 1px solid #c9c9c9;
   border-radius: var(--border-radius-sm);
   padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
 }
