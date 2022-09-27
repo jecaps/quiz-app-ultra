@@ -88,13 +88,6 @@
   list-style: none;
 }
 
-.card__item {
-  background-color: #e3e3e3;
-  border: 1px solid #c9c9c9;
-  border-radius: var(--border-radius-sm);
-  padding: 0.25rem 0.5rem;
-}
-
 @media (min-width: 768px) {
   .card__container {
     display: grid;
