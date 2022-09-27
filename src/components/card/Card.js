@@ -1,4 +1,10 @@
-export default function Card({ question, answer, tags }) {
+import Tag from "../tag/Tag";
+
+export default function Card({ question, answer, categories }) {
+  const categoriesItemElement = categories.map((category) => {
+    return <Tag key={category} tag={category} />;
+  });
+
   return (
     <article className="card">
       <svg
@@ -20,9 +26,7 @@ export default function Card({ question, answer, tags }) {
       </a>
       <p className="card__answer">{answer}</p>
 
-      <ul className="card__category">
-        <li className="card__item">#{tags}</li>
-      </ul>
+      <ul className="card__category">{categoriesItemElement}</ul>
     </article>
   );
 }
