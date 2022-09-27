@@ -1,4 +1,4 @@
-const DUMMY_DATA = [
+export const DUMMY_DATA = [
   {
     id: Math.floor(Math.random() * Math.floor(Math.random() * Date.now())),
     question: "What is the capital of Germany?",
@@ -24,6 +24,22 @@ const DUMMY_DATA = [
     answer: "333 years",
     categories: ["Colonialism", "History", "Spain", "Philippines"],
   },
+  {
+    id: Math.floor(Math.random() * Math.floor(Math.random() * Date.now())),
+    question: "Who created JavaScript?",
+    answer: "1995",
+    categories: ["Programming", "JavaScript"],
+  },
+  {
+    id: Math.floor(Math.random() * Math.floor(Math.random() * Date.now())),
+    question: "What is the tallest building of the world called?",
+    answer: "Burj Khalifa",
+    categories: ["Skyscrappers", "Building"],
+  },
+  {
+    id: Math.floor(Math.random() * Math.floor(Math.random() * Date.now())),
+    question: "Who is the called the father of Modern Computer Science?",
+    answer: "Alan Turing",
+    categories: ["Colonialism", "History", "Spain", "Philippines"],
+  },
 ];
-
-export default DUMMY_DATA;
