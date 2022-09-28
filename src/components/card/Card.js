@@ -1,11 +1,16 @@
 import { useState } from "react";
 import Tag from "../tag/Tag";
 
-export default function Card({ question, answer, categories }) {
+export default function Card({ question, answer, categories, bookmarked }) {
   const [showAnswer, setShowAnswer] = useState(false);
+  const [isBookmarked, setIsBookmarked] = useState(bookmarked);
 
   function cardButtonHandler() {
     setShowAnswer(!showAnswer);
+  }
+
+  function bookmarkToggleHandler() {
+    setIsBookmarked(!isBookmarked);
   }
 
   const categoriesItemElement = categories.map((category) => {
@@ -15,8 +20,11 @@ export default function Card({ question, answer, categories }) {
   return (
     <article className="card">
       <svg
+        onClick={bookmarkToggleHandler}
         data-js="bookmark"
-        className="card__bookmark"
+        className={`card__bookmark ${
+          isBookmarked ? "card__bookmark--marked" : ""
+        }`}
         xmlns="http://www.w3.org/2000/svg"
         x="0px"
         y="0px"

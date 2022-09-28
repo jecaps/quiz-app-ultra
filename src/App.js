@@ -16,8 +16,10 @@ export default function App() {
     <div className="App">
       <Header />
       <main className="card__container">
-        {active === "home" || active === "bookmark" ? (
+        {active === "home" ? (
           <Cards cards={cards} />
+        ) : active === "bookmark" ? (
+          <Cards cards={cards.filter((card) => card.bookmarked === true)} />
         ) : active === "create" ? (
           <Create />
         ) : (

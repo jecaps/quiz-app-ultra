@@ -8,6 +8,7 @@ export default function Cards({ cards }) {
         question={data.question}
         answer={data.answer}
         categories={data.categories}
+        bookmarked={data.bookmarked}
       />
     );
   });
