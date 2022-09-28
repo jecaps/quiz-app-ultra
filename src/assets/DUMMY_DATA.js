@@ -1,4 +1,4 @@
-export const DUMMY_DATA = [
+const DUMMY_DATA = [
   {
     id: Math.floor(Math.random() * Math.floor(Math.random() * Date.now())),
     question: "What is the capital of Germany?",
@@ -43,3 +43,5 @@ export const DUMMY_DATA = [
     categories: ["Colonialism", "History", "Spain", "Philippines"],
   },
 ];
+
+export default DUMMY_DATA;
