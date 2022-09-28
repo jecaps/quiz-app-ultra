@@ -1,6 +1,13 @@
+import { useState } from "react";
 import Tag from "../tag/Tag";
 
 export default function Card({ question, answer, categories }) {
+  const [showAnswer, setShowAnswer] = useState(false);
+
+  function cardButtonHandler() {
+    setShowAnswer(!showAnswer);
+  }
+
   const categoriesItemElement = categories.map((category) => {
     return <Tag key={category} tag={category} />;
   });
@@ -21,10 +28,12 @@ export default function Card({ question, answer, categories }) {
       </svg>
 
       <p className="card__question">{question}</p>
-      <a className="card__btn" href="./">
-        Show Answer
-      </a>
-      <p className="card__answer">{answer}</p>
+      <button className="card__btn" onClick={cardButtonHandler}>
+        {showAnswer ? "Hide Answer" : "Show Answer"}
+      </button>
+      <p className={`card__answer ${showAnswer ? "card__answer--shown" : ""}`}>
+        {answer}
+      </p>
 
       <ul className="card__category">{categoriesItemElement}</ul>
     </article>

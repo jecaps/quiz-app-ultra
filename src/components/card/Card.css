@@ -49,6 +49,7 @@
 }
 
 .card__btn {
+  all: unset;
   text-align: center;
   background-color: #069e2d;
   color: #fff;
@@ -69,13 +70,13 @@
 .card__answer {
   color: #1c572a;
   margin: 0.25rem 0;
-  /* visibility: hidden; */
-  /* opacity: 0;
-  transition: visibility 0.1s linear, opacity 0.3s ease-in; */
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.1s linear, opacity 0.3s ease-in;
 }
 
 .card__answer--shown {
-  /* visibility: visible; */
+  visibility: visible;
   opacity: 1;
 }
 
