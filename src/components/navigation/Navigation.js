@@ -27,9 +27,9 @@ export default function Footer({ active, setActive }) {
 
         <button
           className={`footer__link home ${
-            active === "bookmarks" ? "footer__link--active" : ""
+            active === "bookmark" ? "footer__link--active" : ""
           }`}
-          onClick={() => buttonhandler("bookmarks")}
+          onClick={() => buttonhandler("bookmark")}
         >
           <svg
             className="footer__icon"
@@ -46,9 +46,9 @@ export default function Footer({ active, setActive }) {
 
         <button
           className={`footer__link ${
-            active === "add-question" ? "footer__link--active" : ""
+            active === "create" ? "footer__link--active" : ""
           }`}
-          onClick={() => buttonhandler("add-question")}
+          onClick={() => buttonhandler("create")}
         >
           <svg
             className="footer__icon"
@@ -65,9 +65,9 @@ export default function Footer({ active, setActive }) {
 
         <button
           className={`footer__link ${
-            active === "user" ? "footer__link--active" : ""
+            active === "profile" ? "footer__link--active" : ""
           }`}
-          onClick={() => buttonhandler("user")}
+          onClick={() => buttonhandler("profile")}
         >
           <svg
             className="footer__icon"
