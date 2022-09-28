@@ -1,7 +1,4 @@
-import { useState } from "react";
-export default function Footer() {
-  const [active, setActive] = useState("home");
-
+export default function Footer({ active, setActive }) {
   const buttonhandler = (classname) => {
     setActive(classname);
   };
