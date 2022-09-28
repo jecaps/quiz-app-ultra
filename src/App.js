@@ -12,17 +12,6 @@ import Footer from "./components/navigation/Navigation";
 export default function App() {
   const [active, setActive] = useState("home");
 
-  // const cardElement = cards.map((data) => {
-  //   return (
-  //     <Card
-  //       key={data.id}
-  //       question={data.question}
-  //       answer={data.answer}
-  //       categories={data.categories}
-  //     />
-  //   );
-  // });
-
   return (
     <div className="App">
       <Header />
