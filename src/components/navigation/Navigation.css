@@ -9,6 +9,7 @@
 }
 
 .footer__link {
+  all: unset;
   text-align: center;
   vertical-align: middle;
   width: 100%;
@@ -16,12 +17,7 @@
   fill: #11270b;
 }
 
-.footer__link:active,
-.footer__icon:active,
-.footer__link:focus,
-.footer__icon:focus,
-.footer__link:hover,
-.footer__icon:hover {
+.footer__link--active {
   background-color: #069e2d;
   fill: #fff;
 }
