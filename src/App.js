@@ -13,8 +13,8 @@ export default function App() {
   const [active, setActive] = useState("home");
   const [cards, setCards] = useState(data);
 
-  console.log(cards);
-  console.log(data);
+  // console.log(cards);
+  // console.log(data);
 
   function appendCard(question, answer, tag) {
     setCards([
@@ -29,16 +29,25 @@ export default function App() {
     ]);
   }
 
+  function deleteCardHandler(cardId) {
+    setCards(cards.filter((card) => card.id !== cardId));
+  }
+
   return (
     <div className="App">
       <Header />
       <main className="card__container">
         {active === "home" ? (
-          <Cards cards={cards} setCards={setCards} />
+          <Cards
+            cards={cards}
+            setCards={setCards}
+            deleteCard={deleteCardHandler}
+          />
         ) : active === "bookmark" ? (
           <Cards
             cards={cards.filter((card) => card.bookmarked === true)}
             setCards={setCards}
+            deleteCard={deleteCardHandler}
           />
         ) : active === "create" ? (
           <Create createCard={appendCard} />

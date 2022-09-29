@@ -1,12 +1,23 @@
 import { useState } from "react";
 import Tag from "../tag/Tag";
 
-export default function Card({ question, answer, categories, bookmarked }) {
+export default function Card({
+  id,
+  question,
+  answer,
+  categories,
+  bookmarked,
+  deleteCard,
+}) {
   const [showAnswer, setShowAnswer] = useState(false);
   const [isBookmarked, setIsBookmarked] = useState(bookmarked);
 
   function cardButtonHandler() {
     setShowAnswer(!showAnswer);
+  }
+
+  function deleteCardHandler() {
+    deleteCard(id);
   }
 
   function bookmarkToggleHandler() {
@@ -35,6 +46,7 @@ export default function Card({ question, answer, categories, bookmarked }) {
         <path d="M23,27l-8-7l-8,7V5c0-1.105,0.895-2,2-2h12c1.105,0,2,0.895,2,2V27z"></path>
       </svg>
 
+      <button onClick={deleteCardHandler}>Delete</button>
       <p className="card__question">{question}</p>
       <button className="card__btn" onClick={cardButtonHandler}>
         {showAnswer ? "Hide Answer" : "Show Answer"}
