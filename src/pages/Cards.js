@@ -1,14 +1,14 @@
 import Card from "../components/card/Card";
 
-export default function Cards({ cards }) {
-  const cardElement = cards.map((data) => {
+export default function Cards({ cards, setCards }) {
+  const cardElement = cards.map((card) => {
     return (
       <Card
-        key={data.id}
-        question={data.question}
-        answer={data.answer}
-        categories={data.categories}
-        bookmarked={data.bookmarked}
+        key={card.id}
+        question={card.question}
+        answer={card.answer}
+        categories={card.categories}
+        bookmarked={card.bookmarked}
       />
     );
   });
