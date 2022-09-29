@@ -8,6 +8,7 @@ export default function Card({
   categories,
   bookmarked,
   deleteCard,
+  toggleBookmark,
 }) {
   const [showAnswer, setShowAnswer] = useState(false);
   const [isBookmarked, setIsBookmarked] = useState(bookmarked);
@@ -22,6 +23,7 @@ export default function Card({
 
   function bookmarkToggleHandler() {
     setIsBookmarked(!isBookmarked);
+    toggleBookmark(id);
   }
 
   const categoriesItemElement = categories.map((category) => {

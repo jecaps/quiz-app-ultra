@@ -1,10 +1,10 @@
-export default function Create({ createCard }) {
+export default function Create({ createCard, setActive }) {
   function submitHandler(event) {
     event.preventDefault();
 
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData);
-    console.log(data);
+    setActive("home");
     createCard(data.question, data.answer, data.tags);
     event.target.reset();
     event.target.elements.question.focus();

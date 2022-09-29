@@ -33,24 +33,30 @@ export default function App() {
     setCards(cards.filter((card) => card.id !== cardId));
   }
 
+  function bookmarkToggleHandler(cardId) {
+    setCards(
+      cards.map((card) =>
+        card.id === cardId ? { ...card, bookmarked: !card.bookmarked } : card
+      )
+    );
+  }
+
   return (
     <div className="App">
       <Header />
       <main className="card__container">
-        {active === "home" ? (
+        {active === "home" || active === "bookmark" ? (
           <Cards
-            cards={cards}
-            setCards={setCards}
+            cards={
+              active === "bookmark"
+                ? cards.filter((card) => card.bookmarked)
+                : cards
+            }
             deleteCard={deleteCardHandler}
-          />
-        ) : active === "bookmark" ? (
-          <Cards
-            cards={cards.filter((card) => card.bookmarked === true)}
-            setCards={setCards}
-            deleteCard={deleteCardHandler}
+            toggleBookmark={bookmarkToggleHandler}
           />
         ) : active === "create" ? (
-          <Create createCard={appendCard} />
+          <Create createCard={appendCard} setActive={setActive} />
         ) : (
           <Profile />
         )}
