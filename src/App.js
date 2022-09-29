@@ -13,9 +13,6 @@ export default function App() {
   const [active, setActive] = useState("home");
   const [cards, setCards] = useState(data);
 
-  // console.log(cards);
-  // console.log(data);
-
   function appendCard(question, answer, tag) {
     setCards([
       ...cards,
