@@ -25,7 +25,7 @@ export default function App() {
         id: Math.floor(Math.random() * Math.floor(Math.random() * Date.now())),
         question: question,
         answer: answer,
-        categories: [tag],
+        categories: tag.split(", "),
         bookmarked: false,
       },
     ]);
