@@ -3,7 +3,7 @@
 /* @import "global.css"; */
 @import "./components/card/Card.css";
 @import "./components/tag/Tag.css";
-/* @import "components/form/form.css"; */
+@import "components/form/Form.css";
 @import "./components/header/Header.css";
 @import "./components/navigation/Navigation.css";
 
