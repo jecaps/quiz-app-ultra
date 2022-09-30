@@ -31,7 +31,7 @@ const DUMMY_DATA = [
   {
     id: Math.floor(Math.random() * Math.floor(Math.random() * Date.now())),
     question: "Who created JavaScript?",
-    answer: "1995",
+    answer: "Brendan Eich",
     categories: ["Programming", "JavaScript"],
     bookmarked: true,
   },
