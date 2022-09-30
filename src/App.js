@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { saveToLocal, loadFromLocal } from "./lib/localStorage";
 
 import "./App.css";
 import data from "./assets/DUMMY_DATA";
@@ -11,7 +12,11 @@ import Footer from "./components/navigation/Navigation";
 
 export default function App() {
   const [active, setActive] = useState("home");
-  const [cards, setCards] = useState(data);
+  const [cards, setCards] = useState(loadFromLocal("saved cards") ?? data);
+
+  useEffect(() => {
+    saveToLocal("saved cards", cards);
+  }, [cards]);
 
   function appendCard(question, answer, tag) {
     setCards([
