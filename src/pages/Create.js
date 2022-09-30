@@ -65,7 +65,7 @@ export default function Create({ createCard, setActive }) {
               type="text"
               id="tag"
               name="tags"
-              placeholder="#example"
+              placeholder="Example AnotherExample"
             />
           </div>
           <button className="form__button" type="submit">
