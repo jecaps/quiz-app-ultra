@@ -44,7 +44,7 @@ const DUMMY_DATA = [
   },
   {
     id: Math.floor(Math.random() * Math.floor(Math.random() * Date.now())),
-    question: "Who is the called the father of Modern Computer Science?",
+    question: "Who is called the father of Modern Computer Science?",
     answer: "Alan Turing",
     categories: ["ComputerScience", "History"],
     bookmarked: false,
