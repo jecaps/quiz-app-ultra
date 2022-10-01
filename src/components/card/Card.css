@@ -27,9 +27,7 @@
   width: 50px;
 }
 
-.card__bookmark:hover,
-.card__bookmark:active,
-.card__bookmark:focus {
+.card__bookmark:hover {
   cursor: pointer;
   animation: shake 0.2s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
   transform: translate3d(0, 0, 0);
