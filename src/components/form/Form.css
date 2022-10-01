@@ -76,3 +76,17 @@
   background-color: #1c572a;
   transform: scale(0.95);
 }
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  textarea,
+  input {
+    font-size: 16px;
+  }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  textarea:focus,
+  input:focus {
+    font-size: 16px;
+  }
+}
