@@ -43,6 +43,8 @@ export default function App() {
     );
   }
 
+  const bookmarkedCards = cards.filter((card) => card.bookmarked);
+
   return (
     <div className="App">
       <Header />
@@ -54,11 +56,15 @@ export default function App() {
             toggleBookmark={bookmarkToggleHandler}
           />
         ) : active === "bookmark" ? (
-          <Cards
-            cards={cards.filter((card) => card.bookmarked)}
-            deleteCard={deleteCardHandler}
-            toggleBookmark={bookmarkToggleHandler}
-          />
+          bookmarkedCards.length > 0 ? (
+            <Cards
+              cards={bookmarkedCards}
+              deleteCard={deleteCardHandler}
+              toggleBookmark={bookmarkToggleHandler}
+            />
+          ) : (
+            <div>You do not have any bookmarks</div>
+          )
         ) : active === "create" ? (
           <Create createCard={appendCard} setActive={setActive} />
         ) : (
