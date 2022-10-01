@@ -20,9 +20,8 @@ export default function Card({
     <article className="card">
       <svg
         onClick={() => toggleBookmark(id)}
-        className={`card__bookmark ${
-          bookmarked ? "card__bookmark--marked" : ""
-        }`}
+        className="card__bookmark"
+        style={{ fill: `${bookmarked ? "#df2935" : "#828a95"}` }}
         data-js="bookmark"
         xmlns="http://www.w3.org/2000/svg"
         x="0px"
