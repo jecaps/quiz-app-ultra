@@ -26,14 +26,14 @@ const DUMMY_DATA = [
       "How many years was Philippines under the colonial rule of Spain?",
     answer: "333 years",
     categories: ["Colonialism", "History", "Spain", "Philippines"],
-    bookmarked: true,
+    bookmarked: false,
   },
   {
     id: Math.floor(Math.random() * Math.floor(Math.random() * Date.now())),
     question: "Who created JavaScript?",
     answer: "Brendan Eich",
     categories: ["Programming", "JavaScript"],
-    bookmarked: true,
+    bookmarked: false,
   },
   {
     id: Math.floor(Math.random() * Math.floor(Math.random() * Date.now())),
