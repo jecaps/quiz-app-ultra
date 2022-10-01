@@ -31,10 +31,31 @@
 .card__bookmark:active,
 .card__bookmark:focus {
   cursor: pointer;
-  fill: var(--red);
   animation: shake 0.2s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
   transform: translate3d(0, 0, 0);
   perspective: 1000px;
+}
+
+.card__delete-btn {
+  all: unset;
+  color: #828a95;
+  background-color: #e3e3e3;
+  padding: 0 5px;
+  border: 1px solid #c9c9c9;
+  border-radius: 50%;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  transition: transform 0.1s ease-in-out;
+}
+
+.card__delete-btn:hover,
+.card__delete-btn:active,
+.card__delete-btn:focus {
+  background-color: #df2935;
+  border-color: #df2935;
+  color: #fff;
+  transform: scale(1.05);
 }
 
 .card__question {

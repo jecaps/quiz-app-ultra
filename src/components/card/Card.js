@@ -33,7 +33,9 @@ export default function Card({
         <path d="M23,27l-8-7l-8,7V5c0-1.105,0.895-2,2-2h12c1.105,0,2,0.895,2,2V27z"></path>
       </svg>
 
-      <button onClick={() => deleteCard(id)}>Delete</button>
+      <button onClick={() => deleteCard(id)} className="card__delete-btn">
+        ×
+      </button>
       <p className="card__question">{question}</p>
       <button className="card__btn" onClick={() => setShowAnswer(!showAnswer)}>
         {showAnswer ? "Hide Answer" : "Show Answer"}
