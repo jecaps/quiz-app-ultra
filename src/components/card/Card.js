@@ -11,12 +11,6 @@ export default function Card({
   toggleBookmark,
 }) {
   const [showAnswer, setShowAnswer] = useState(false);
-  const [isBookmarked, setIsBookmarked] = useState(bookmarked);
-
-  function bookmarkToggleHandler() {
-    setIsBookmarked(!isBookmarked);
-    toggleBookmark(id);
-  }
 
   const categoriesItemElement = categories.map((category) => {
     return <Tag key={category} tag={category} />;
@@ -25,11 +19,11 @@ export default function Card({
   return (
     <article className="card">
       <svg
-        onClick={bookmarkToggleHandler}
-        data-js="bookmark"
+        onClick={() => toggleBookmark(id)}
         className={`card__bookmark ${
-          isBookmarked ? "card__bookmark--marked" : ""
+          bookmarked ? "card__bookmark--marked" : ""
         }`}
+        data-js="bookmark"
         xmlns="http://www.w3.org/2000/svg"
         x="0px"
         y="0px"
