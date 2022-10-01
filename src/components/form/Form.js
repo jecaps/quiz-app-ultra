@@ -45,7 +45,7 @@ function Form({ submitHandler }) {
             type="text"
             id="tag"
             name="tags"
-            placeholder="Example AnotherExample"
+            placeholder="History, Sports, Geography"
           />
         </div>
         <button className="form__button" type="submit">
