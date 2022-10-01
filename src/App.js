@@ -47,13 +47,15 @@ export default function App() {
     <div className="App">
       <Header />
       <main className="card__container">
-        {active === "home" || active === "bookmark" ? (
+        {active === "home" ? (
           <Cards
-            cards={
-              active === "bookmark"
-                ? cards.filter((card) => card.bookmarked)
-                : cards
-            }
+            cards={cards}
+            deleteCard={deleteCardHandler}
+            toggleBookmark={bookmarkToggleHandler}
+          />
+        ) : active === "bookmark" ? (
+          <Cards
+            cards={cards.filter((card) => card.bookmarked)}
             deleteCard={deleteCardHandler}
             toggleBookmark={bookmarkToggleHandler}
           />
