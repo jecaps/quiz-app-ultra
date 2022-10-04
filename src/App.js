@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Routes, Route } from "react-router-dom";
 import { saveToLocal, loadFromLocal } from "./lib/localStorage";
 
 import "./App.css";
@@ -49,27 +50,33 @@ export default function App() {
     <div className="App">
       <Header />
       <main className="card__container">
-        {active === "home" ? (
-          <Cards
-            cards={cards}
-            deleteCard={deleteCardHandler}
-            toggleBookmark={bookmarkToggleHandler}
-          />
-        ) : active === "bookmark" ? (
-          bookmarkedCards.length > 0 ? (
-            <Cards
-              cards={bookmarkedCards}
-              deleteCard={deleteCardHandler}
-              toggleBookmark={bookmarkToggleHandler}
-            />
-          ) : (
-            <div>You do not have any bookmarks</div>
-          )
-        ) : active === "create" ? (
-          <Create createCard={appendCard} setActive={setActive} />
-        ) : (
-          <Profile />
-        )}
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Cards
+                cards={cards}
+                deleteCard={deleteCardHandler}
+                toggleBookmark={bookmarkToggleHandler}
+              />
+            }
+          ></Route>
+          <Route
+            path="bookmarks"
+            element={
+              <Cards
+                cards={bookmarkedCards}
+                deleteCard={deleteCardHandler}
+                toggleBookmark={bookmarkToggleHandler}
+              />
+            }
+          ></Route>
+          <Route
+            path="create"
+            element={<Create createCard={appendCard} setActive={setActive} />}
+          ></Route>
+          <Route path="profile" element={<Profile />}></Route>
+        </Routes>
       </main>
       <Footer setActive={setActive} active={active} />
     </div>
