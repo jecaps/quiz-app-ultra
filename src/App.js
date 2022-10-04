@@ -60,7 +60,7 @@ export default function App() {
                 toggleBookmark={bookmarkToggleHandler}
               />
             }
-          ></Route>
+          />
           <Route
             path="bookmarks"
             element={
@@ -70,12 +70,12 @@ export default function App() {
                 toggleBookmark={bookmarkToggleHandler}
               />
             }
-          ></Route>
+          />
           <Route
             path="create"
             element={<Create createCard={appendCard} setActive={setActive} />}
-          ></Route>
-          <Route path="profile" element={<Profile />}></Route>
+          />
+          <Route path="profile" element={<Profile />} />
         </Routes>
       </main>
       <Footer setActive={setActive} active={active} />
