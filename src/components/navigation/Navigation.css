@@ -17,7 +17,7 @@
   fill: #11270b;
 }
 
-.footer__link--active {
+.active {
   background-color: #069e2d;
   fill: #fff;
 }
