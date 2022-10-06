@@ -1,20 +1,10 @@
 import { NavLink } from "react-router-dom";
 
-export default function Footer({ active, setActive }) {
-  const buttonhandler = (classname) => {
-    setActive(classname);
-  };
-
+export default function Footer() {
   return (
     <footer className="footer">
       <nav className="footer__nav">
-        <NavLink
-          to="/"
-          className={`footer__link ${
-            active === "home" ? "footer__link--active" : ""
-          }`}
-          onClick={() => buttonhandler("home")}
-        >
+        <NavLink to="/" end className="footer__link">
           <svg
             className="footer__icon"
             xmlns="http://www.w3.org/2000/svg"
@@ -28,13 +18,7 @@ export default function Footer({ active, setActive }) {
           </svg>
         </NavLink>
 
-        <NavLink
-          to="/bookmarks"
-          className={`footer__link home ${
-            active === "bookmark" ? "footer__link--active" : ""
-          }`}
-          onClick={() => buttonhandler("bookmark")}
-        >
+        <NavLink to="/bookmarks" className="footer__link">
           <svg
             className="footer__icon"
             xmlns="http://www.w3.org/2000/svg"
@@ -48,13 +32,7 @@ export default function Footer({ active, setActive }) {
           </svg>
         </NavLink>
 
-        <NavLink
-          to="/create"
-          className={`footer__link ${
-            active === "create" ? "footer__link--active" : ""
-          }`}
-          onClick={() => buttonhandler("create")}
-        >
+        <NavLink to="/create" className="footer__link">
           <svg
             className="footer__icon"
             xmlns="http://www.w3.org/2000/svg"
@@ -68,13 +46,7 @@ export default function Footer({ active, setActive }) {
           </svg>
         </NavLink>
 
-        <NavLink
-          to="/profile"
-          className={`footer__link ${
-            active === "profile" ? "footer__link--active" : ""
-          }`}
-          onClick={() => buttonhandler("profile")}
-        >
+        <NavLink to="/profile" className="footer__link">
           <svg
             className="footer__icon"
             xmlns="http://www.w3.org/2000/svg"
