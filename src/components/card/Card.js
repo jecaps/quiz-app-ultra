@@ -1,5 +1,7 @@
-import { useState } from "react";
+import { NavLink } from "react-router-dom";
+
 import Tag from "../tag/Tag";
+import useToggle from "../../hooks/useToggle";
 
 export default function Card({
   id,
@@ -10,7 +12,7 @@ export default function Card({
   deleteCard,
   toggleBookmark,
 }) {
-  const [showAnswer, setShowAnswer] = useState(false);
+  const [showAnswer, toggleAnswer] = useToggle();
 
   const categoriesItemElement = categories.map((category) => {
     return <Tag key={category} tag={category} />;
@@ -18,6 +20,8 @@ export default function Card({
 
   return (
     <article className="card">
+      <NavLink to={`/${id}`}>Show Card Details</NavLink>
+
       <svg
         onClick={() => toggleBookmark(id)}
         className="card__bookmark"
@@ -37,7 +41,7 @@ export default function Card({
         ×
       </button>
       <p className="card__question">{question}</p>
-      <button className="card__btn" onClick={() => setShowAnswer(!showAnswer)}>
+      <button className="card__btn" onClick={toggleAnswer}>
         {showAnswer ? "Hide Answer" : "Show Answer"}
       </button>
       <p className={`card__answer ${showAnswer ? "card__answer--shown" : ""}`}>

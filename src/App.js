@@ -5,14 +5,15 @@ import { saveToLocal, loadFromLocal } from "./lib/localStorage";
 import "./App.css";
 import data from "./assets/DUMMY_DATA";
 
-import Cards from "./pages/Cards";
+import Home from "./pages/Home";
+import Bookmarks from "./pages/Bookmarks";
 import Create from "./pages/Create";
 import Profile from "./pages/Profile";
-import Header from "./components/header/Header";
-import Footer from "./components/navigation/Navigation";
+import Layout from "./components/Layout";
+
+import CardDetails from "./components/CardDetails";
 
 export default function App() {
-  const [active, setActive] = useState("home");
   const [cards, setCards] = useState(loadFromLocal("saved cards") ?? data);
 
   useEffect(() => {
@@ -44,41 +45,47 @@ export default function App() {
     );
   }
 
-  const bookmarkedCards = cards.filter((card) => card.bookmarked);
-
   return (
     <div className="App">
-      <Header />
-      <main className="card__container">
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <Cards
-                cards={cards}
-                deleteCard={deleteCardHandler}
-                toggleBookmark={bookmarkToggleHandler}
-              />
-            }
-          />
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route>
+            <Route
+              index
+              element={
+                <Home
+                  cards={cards}
+                  deleteCard={deleteCardHandler}
+                  toggleBookmark={bookmarkToggleHandler}
+                />
+              }
+            />
+            <Route
+              path=":id/"
+              element={
+                <CardDetails
+                  cards={cards}
+                  deleteCard={deleteCardHandler}
+                  toggleBookmark={bookmarkToggleHandler}
+                />
+              }
+            />
+          </Route>
+
           <Route
             path="bookmarks"
             element={
-              <Cards
-                cards={bookmarkedCards}
+              <Bookmarks
+                cards={cards.filter((card) => card.bookmarked)}
                 deleteCard={deleteCardHandler}
                 toggleBookmark={bookmarkToggleHandler}
               />
             }
           />
-          <Route
-            path="create"
-            element={<Create createCard={appendCard} setActive={setActive} />}
-          />
+          <Route path="create" element={<Create createCard={appendCard} />} />
           <Route path="profile" element={<Profile />} />
-        </Routes>
-      </main>
-      <Footer setActive={setActive} active={active} />
+        </Route>
+      </Routes>
     </div>
   );
 }
